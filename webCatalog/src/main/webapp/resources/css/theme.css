@@ -1,0 +1,96 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+body::after {
+	content: '';
+	display: block;
+	height: 50px; /* Set same as footer's height */
+}
+
+.header {
+	height: 50px;
+	border-bottom: 4px solid black;
+}
+
+.header div {
+	height: 50px;
+	display: inline-block;
+	line-height: 50px;
+	vertical-align: middle;
+}
+
+.header .logo {
+	background: url("#{resource['images/logo.png']}") no-repeat;
+	background-size: contain;
+	width: 50px;
+	border: none;
+}
+
+.header .title {
+	width: 80%;
+}
+
+.header .lngSwitcher {
+	float: right;
+}
+
+.content {
+	width: 70%;
+	margin: auto;
+	padding: 10px;
+}
+
+.content .filters {
+	padding: 25px 0 25px 0;
+}
+
+.footer {
+	height: 50px;
+	width: 100%;
+	border-top: 4px solid black;
+	position: absolute;
+	bottom: 0;
+}
+
+.footer div {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.catalog-table {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #BBBBBB;
+}
+
+.catalog-table-header {
+	text-align: center;
+	background: none repeat scroll 0 0 #778899;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 16px;
+}
+
+.catalog-table-odd-row {
+	text-align: center;
+	background: none repeat scroll 0 0 #FFFFFFF;
+	border-top: 1px solid #BBBBBB;
+}
+
+.catalog-table-even-row {
+	text-align: center;
+	background: none repeat scroll 0 0 #F9F9F9;
+	border-top: 1px solid #BBBBBB;
+}
+
+.catalog-table-cell-name {
+	text-align: left;
+	padding-left: 20px;
+}

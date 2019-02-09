@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:body>
+		<ui:composition>
+			<div class="content">
+				<h:form>
+					<div class="filters">
+						<h:outputText value="#{props['catalog.filter.country']}"/>&#160;
+				        <h:selectOneMenu value="#{catalogBean.filterCountry}" onchange="submit()"
+							valueChangeListener="#{catalogBean.filterCountryChange}" styleClass="filterCountry">
+				        	<f:selectItems value="#{catalogBean.countries}"/>
+				        </h:selectOneMenu>
+			 
+						&#160;&#160;<h:outputText value="#{props['catalog.filter.state']}"/>&#160;
+				        <h:selectOneMenu value="#{catalogBean.filterState}" onchange="submit()"
+							valueChangeListener="#{catalogBean.filterStateChange}" styleClass="filterState">
+				        	<f:selectItems value="#{catalogBean.states}"/>
+				        </h:selectOneMenu>
+			        </div>
+			        
+			        <h:dataTable value="#{catalogBean.catalogItems}" var="item"
+			        		styleClass="catalog-table" headerClass="catalog-table-header"
+			        		rowClasses="catalog-table-odd-row,catalog-table-even-row" columnClasses="catalog-table-cell-name">
+						<h:column>    				
+						   <f:facet name="header">#{props['catalog.column.name']}</f:facet>    				
+						   #{item.name}
+						</h:column>
+						<h:column>
+						   <f:facet name="header">#{props['catalog.column.code']}</f:facet>
+						   #{item.code}
+						</h:column>
+						<h:column>
+						   <f:facet name="header">#{props['catalog.column.phone']}</f:facet>
+						   #{item.shortNumber}
+						</h:column>
+						<h:column>
+						   <f:facet name="header">#{props['catalog.column.country']}</f:facet>
+						   #{item.country}
+						</h:column>
+						<h:column>
+						   <f:facet name="header">#{props['catalog.column.state']}</f:facet>
+						   #{item.state}
+						</h:column>
+					</h:dataTable>
+		 		</h:form>
+		 	</div>
+ 		</ui:composition>
+   	</h:body>
+
+</html>
