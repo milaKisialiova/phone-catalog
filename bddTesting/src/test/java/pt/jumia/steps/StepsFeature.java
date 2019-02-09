@@ -64,7 +64,7 @@ public class StepsFeature {
 	}
 
 	private void waitForElement(By locator) {
-		WebDriverWait driverWait = new WebDriverWait(driver, 10L);
-		driverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		WebDriverWait driverWait = new WebDriverWait(driver, 30L);
+		driverWait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 }
